@@ -9,10 +9,10 @@ function initializeApp(){
 
 function handleSquareCLick(){
     console.log('square has been clicked', this);
-    if($(".square").children().length < 1){
-        return
-    } else {
+    if($(this).find("#target").length > 0){
         var randomSquare = $(".square").eq(Math.floor(Math.random()*3) + 1);
         $("#target").prependTo(randomSquare);
+    } else {
+        return
     }
 }
