@@ -16,11 +16,19 @@ function handleDivClicks(){
         decrementText = $(".counter2").text();
         decrementText--;
         $(".counter2").text(decrementText);
+        if(decrementText < 0){
+            decrementText = 0;
+            $(".counter2").text(decrementText);
+        }
     } else {
         incrementText++;
         $(this).text(incrementText);
         decrementText = $(".counter1").text();        
         decrementText--;       
         $(".counter1").text(decrementText);
+        if(decrementText < 0){
+            decrementText = 0;
+            $(".counter1").text(decrementText);
+        }
     }
 }
