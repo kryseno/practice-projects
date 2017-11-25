@@ -43,7 +43,14 @@
 		$("#phoneNumbers>button").on('click',handleNumberPress);
 		function handleNumberPress(){
 			var buttonPressed = $(this).text();
+			if (buttonPressed === '#'){
+				buttonPressed = 'pound';
+			}
 			responsiveVoice.speak("you pressed "+buttonPressed);
+
+			if(buttonPressed === '*'){
+				console.log('you pressed 1: ', this);
+			}
 		}
 	</script>
 </html>
