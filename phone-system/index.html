@@ -60,12 +60,17 @@
 					break;
 				case '3':
 					responsiveVoice.speak("you've selected car rentals");
+					carRentals();
 					break;
 				case '4':
 					responsiveVoice.speak("you've selected grocery stores");
+					groceryStores();
 					break;
 				case '9':
 					responsiveVoice.speak(voiceInstructions());
+					break;
+				case '0':
+					responsiveVoice.speak("please wait. you are being transferred to an operator");
 					break;
 				default:
 					responsiveVoice.speak("please select a valid button. To repeat menu options, press 9");
@@ -77,7 +82,13 @@
 			responsiveVoice.speak("Mcdonald's, In-N-Out, Arby's, Carl's Jr, Taco Bell");
 		}
 		function medicalOffices(){
-			responsiveVoice.speak("Hoag, Kaiser Permanente, St. Joseph, MemorialCare");
+			responsiveVoice.speak("Hoag, Kaiser Permanente, Saint. Joseph, MemorialCare");
+		}
+		function carRentals(){
+			responsiveVoice.speak("Enterprise, Hertz, Avis, Budget, Alamo");
+		}
+		function groceryStores(){
+			responsiveVoice.speak("Pavilions, Albertsons, Gelson's, Ralph's, Whole Foods");
 		}
 	</script>
 </html>
