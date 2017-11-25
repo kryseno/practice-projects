@@ -17,5 +17,11 @@ function handleDivClicks(){
         decrementText = $(this).text(); 
         decrementText--;       
         $(".counter2").text(decrementText);
+    } else {
+        incrementText++;
+        $(this).text(incrementText);
+        decrementText = $(this).text(); 
+        decrementText--;       
+        $(".counter1").text(decrementText);
     }
 }
