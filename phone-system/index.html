@@ -29,6 +29,7 @@
 		$(document).ready(initializeApp);
 
 		function initializeApp(){
+			$("#phoneNumbers>button").on('click',handleNumberPress);
 			responsiveVoice.speak("Hello");
 			voiceInstructions();
 		}
@@ -43,8 +44,6 @@
 				Or press 0 to speak with an operator.
 			`);
 		}
-		
-		$("#phoneNumbers>button").on('click',handleNumberPress);
 
 		function handleNumberPress(){
 			var buttonPressed = $(this).text();
@@ -57,6 +56,7 @@
 					break;
 				case '2':
 					responsiveVoice.speak("you've selected medical offices");
+					medicalOffices();
 					break;
 				case '3':
 					responsiveVoice.speak("you've selected car rentals");
