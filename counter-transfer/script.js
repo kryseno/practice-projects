@@ -21,7 +21,7 @@ function handleDivClicks(){
     } else {
         incrementText++;
         $(this).text(incrementText);
-        decrementText = $(".counter2").text();        
+        decrementText = $(".counter1").text();        
         decrementText--;       
         $(".counter1").text(decrementText);
     }
