@@ -45,6 +45,7 @@
 		}
 		
 		$("#phoneNumbers>button").on('click',handleNumberPress);
+
 		function handleNumberPress(){
 			var buttonPressed = $(this).text();
 			responsiveVoice.speak("you pressed "+buttonPressed);
@@ -52,17 +53,31 @@
 			switch(buttonPressed){
 				case '1':
 					responsiveVoice.speak("you've selected fast food options");
+					fastFood();
 					break;
 				case '2':
 					responsiveVoice.speak("you've selected medical offices");
+					break;
 				case '3':
 					responsiveVoice.speak("you've selected car rentals");
+					break;
 				case '4':
 					responsiveVoice.speak("you've selected grocery stores");
+					break;
 				case '9':
 					responsiveVoice.speak(voiceInstructions());
-
+					break;
+				default:
+					responsiveVoice.speak("please select a valid button. To repeat menu options, press 9");
+					break;
 			}
+		}
+
+		function fastFood(){
+			responsiveVoice.speak("Mcdonald's, In-N-Out, Arby's, Carl's Jr, Taco Bell");
+		}
+		function medicalOffices(){
+			responsiveVoice.speak("Hoag, Kaiser Permanente, St. Joseph, MemorialCare");
 		}
 	</script>
 </html>
