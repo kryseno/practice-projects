@@ -22,34 +22,46 @@
 	<button>1</button><button>2</button><button>3</button>
 	<button>4</button><button>5</button><button>6</button>
 	<button>7</button><button>8</button><button>9</button>
-	<button>#</button><button>0</button><button>*</button>
+	<button>0</button>
 </div>
 </body>
 	<script>
 		$(document).ready(initializeApp);
 
 		function initializeApp(){
-			responsiveVoice.speak(`Hello, 
+			responsiveVoice.speak("Hello");
+			voiceInstructions();
+		}
+
+		function voiceInstructions(){
+			responsiveVoice.speak(`
 				Press 1 for fast food options.
 				Press 2 for medical offices.
 				Press 3 for car rentals.
 				Press 4 for grocery stores.
 				Press 9 to repeat the options.
 				Or press 0 to speak with an operator.
-				To repeat these options, press pound.
 			`);
 		}
 		
 		$("#phoneNumbers>button").on('click',handleNumberPress);
 		function handleNumberPress(){
 			var buttonPressed = $(this).text();
-			if (buttonPressed === '#'){
-				buttonPressed = 'pound';
-			}
 			responsiveVoice.speak("you pressed "+buttonPressed);
 
-			if(buttonPressed === '*'){
-				console.log('you pressed 1: ', this);
+			switch(buttonPressed){
+				case '1':
+					responsiveVoice.speak("you've selected fast food options");
+					break;
+				case '2':
+					responsiveVoice.speak("you've selected medical offices");
+				case '3':
+					responsiveVoice.speak("you've selected car rentals");
+				case '4':
+					responsiveVoice.speak("you've selected grocery stores");
+				case '9':
+					responsiveVoice.speak(voiceInstructions());
+
 			}
 		}
 	</script>
